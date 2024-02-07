@@ -1,4 +1,5 @@
 const express = require("express");
+
 const router = express.Router();
 const app = express();
 app.use(express.json());
@@ -22,6 +23,7 @@ app.post("/products", (req, res) => {
   newProduct.name = req.body.name;
   newProduct.description = req.body.description;
   newProduct.price = req.body.price;
+  console.log("Novo produto adicionado:", newProduct);
   products.push(newProduct);
   res.status(201).json(newProduct);
 });
